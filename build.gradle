@@ -28,3 +28,6 @@ test {
     useJUnitPlatform()
     systemProperties(System.getProperties())  // Передача системных свойств тестов
 }
+task github_test (type: Test) {
+    useJUnitPlatform()
+}

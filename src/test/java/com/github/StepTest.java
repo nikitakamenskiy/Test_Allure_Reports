@@ -14,15 +14,11 @@ import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
 
-public class StepTest {
+public class StepTest extends TestBase {
     private static String REPOSITORY = "eroshenkoam/allure-example";
     private static int ISSUE = 95;
 
-    @BeforeAll
-    static void beforAll() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
-    }
+
 
     @Test
     public void testLambdaStep() {
@@ -55,7 +51,6 @@ public class StepTest {
     }
     @Test
     public void testAnnotatedStep() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
 
         steps.openMainPage();

@@ -32,8 +32,6 @@ public class LabelTest {
 
 
     public void testIssueName() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
 
         open("https://github.com/");
         $(".search-input-container").click();

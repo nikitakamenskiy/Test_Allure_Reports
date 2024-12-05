@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.12.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+allure {
+    version = '2.32.0'  // Устанавливаем версию для генерации отчёта
+    autoconfigure = true  // Автоматическая настройка плагина для вашего проекта
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation 'com.codeborne:selenide:7.6.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.29.1'
+    testImplementation 'io.qameta.allure:allure-junit5:2.29.1'  // Добавление зависимости для JUnit5
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())  // Передача системных свойств тестов
+}
